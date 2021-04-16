@@ -1,5 +1,5 @@
 # Human-Segmentation-PyTorch
-Human segmentation [models](https://github.com/AntiAegis/Semantic-Segmentation-PyTorch#supported-networks), [training](https://github.com/AntiAegis/Semantic-Segmentation-PyTorch#training)/[inference](https://github.com/AntiAegis/Semantic-Segmentation-PyTorch#inference) code, and [trained weights](https://github.com/AntiAegis/Semantic-Segmentation-PyTorch#benchmark), implemented in PyTorch.
+Human segmentation [models](https://github.com/tansyab1/Human-Segmentation#supported-networks), [training](https://github.com/tansyab1/Human-Segmentation#training)/[inference](https://github.com/tansyab1/Human-Segmentation#inference) code, and [trained weights](https://github.com/tansyab1/Human-Segmentation#benchmark), implemented in PyTorch.
 
 ## Supported networks
 * [UNet](https://arxiv.org/abs/1505.04597): backbones [MobileNetV2](https://arxiv.org/abs/1801.04381) (all aphas and expansions), [ResNetV1](https://arxiv.org/abs/1512.03385) (all num_layers)
@@ -47,14 +47,14 @@ python train.py --config config/config_DeepLab.json --device 0 --resume path_to_
 * One can open tensorboard to monitor the training progress by enabling the visualization mode in the configuration file.
 
 ## Inference
-There are two modes of inference: [video](https://github.com/AntiAegis/Semantic-Segmentation-PyTorch/blob/master/inference_video.py) and [webcam](https://github.com/AntiAegis/Semantic-Segmentation-PyTorch/blob/master/inference_webcam.py).
+There are two modes of inference: [video](https://github.com/tansyab1/Human-Segmentation/blob/master/inference_video.py) and [webcam](https://github.com/tansyab1/Human-Segmentation/blob/master/inference_webcam.py).
 ```
 python inference_video.py --watch --use_cuda --checkpoint path_to_checkpoint/model_best.pth
 python inference_webcam.py --use_cuda --checkpoint path_to_checkpoint/model_best.pth
 ```
 
 ## Benchmark
-* Networks are trained on a combined dataset from the two mentioned datasets above. There are [6627 training](https://github.com/AntiAegis/Semantic-Segmentation-PyTorch/blob/master/dataset/train_mask.txt) and [737 testing](https://github.com/AntiAegis/Semantic-Segmentation-PyTorch/blob/master/dataset/valid_mask.txt) images.
+* Networks are trained on a combined dataset from the two mentioned datasets above. There are [6627 training](https://github.com/tansyab1/Human-Segmentation/blob/master/dataset/train_mask.txt) and [737 testing](https://github.com/tansyab1/Human-Segmentation/blob/master/dataset/valid_mask.txt) images.
 * Input size of model is set to 320.
 * The CPU and GPU time is the averaged inference time of 10 runs (there are also 10 warm-up runs before measuring) with batch size 1.
 * The mIoU is measured on the testing subset (737 images) from the combined dataset.
